@@ -22,6 +22,7 @@ WORKDIR /mfbot
 COPY Acc.ini .
 COPY ./Web/ ./Web/
 COPY entrypoint.sh .
+COPY en/ en/
 
 RUN chmod a+x ./entrypoint.sh
 
@@ -32,6 +33,7 @@ RUN python3.6 --version && \
     source venv/bin/activate && \
     pip install -r requirements.txt
 
-# CMD [ "/mfbot/entrypoint.sh" ]
+# Needed for bot to find Acc.ini file
+WORKDIR /mfbot/
 
 ENTRYPOINT [ "/mfbot/entrypoint.sh" ]

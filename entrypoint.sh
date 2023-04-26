@@ -1,13 +1,17 @@
 #!/bin/bash
 
 # Run bot
-cd /mfbot/
-./MFBot_Konsole_x86_64 >> botLog.txt &
+while true; do
+    if ! ps -C MFBot_Konsole_x > /dev/null; then
+        cd /mfbot/ || exit
+        ./MFBot_Konsole_x86_64 >> botLog.txt &
+    fi
 
-# Run web panel
-cd /mfbot/Web/
-source venv/bin/activate
-python MainProgram.py -a http://127.0.0.1:6969/ --remoteU="admin" --remoteP="admin" --webU="admin" --webP="admin" --debug=0 >> webLog.txt &
+    if ! ps -C python > /dev/null; then
+        cd /mfbot/Web/ || exit
+        source venv/bin/activate
+        python MainProgram.py -a http://127.0.0.1:6969/ --remoteU="admin" --remoteP="admin" --webU="admin" --webP="admin" --debug=0 >> webLog.txt &
+    fi
 
-# Keep container alive
-while true; do sleep 1000; done
+    sleep 10
+done
