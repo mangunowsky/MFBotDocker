@@ -30,7 +30,7 @@ Prepare Acc.ini file on MFBot's Windows version. Go to the Settings > Network > 
 
 7. Happy boting!
 
-# Changing web interface listeining port.
+# Changing web interface listening port.
 
 To change port on which web interface is listeing you need to edit globalVariables.py file located in Web/Functions/
 
