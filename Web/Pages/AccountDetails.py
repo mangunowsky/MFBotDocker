@@ -23,7 +23,7 @@ def getLayout(calledAccount = None):
                 html.Td(dcc.Dropdown(
                     options=AccountFun.getAccountDropdown(), id='iAccount',value=calledAccount)),
                 html.Td(dcc.Input(id='iAcc_log_amount',
-                                  type='number', value='10', max='500')),
+                                  type='number', value='100', max='500')),
                 html.Td([dcc.Dropdown(options=globalVariables.accountOptions, id='iAccount_Action'), html.Button(
                     'Perform Action', id="bAcc_Perform")])
                 ])]),
