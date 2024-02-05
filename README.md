@@ -18,7 +18,7 @@ Prepare Acc.ini file on MFBot's Windows version. Go to the Settings > Network > 
 
 4. Run Docker container
 
-> docker run -dit mfbot
+> docker run -p 8050:8050 -dit mfbot
 
 5. Get containers IP address
 
