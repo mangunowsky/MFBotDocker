@@ -4,7 +4,7 @@ dash==0.21.1
 dash_core_components==0.23.0
 dash_html_components==0.11.0
 dash_table_experiments==0.6.0
-dash_renderer==0.13.0
+dash_renderer==1.9.1
 pycurl==7.43.0.2
 numpy>=1.14.4
 dash_auth==1.0.2
